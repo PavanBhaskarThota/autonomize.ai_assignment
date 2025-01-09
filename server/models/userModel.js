@@ -1,0 +1,40 @@
+import mongoose from "mongoose";
+
+const userSchema = new mongoose.Schema({
+  login: { type: String, required: true },
+  id: { type: Number},
+  node_id: { type: String },
+  avatar_url: { type: String },
+  gravatar_id: { type: String, default: '' },
+  url: { type: String },
+  html_url: { type: String },
+  followers_url: { type: String },
+  following_url: { type: String },
+  gists_url: { type: String },
+  starred_url: { type: String },
+  subscriptions_url: { type: String },
+  organizations_url: { type: String },
+  repos_url: { type: String },
+  events_url: { type: String },
+  received_events_url: { type: String },
+  type: { type: String, default: 'User' },
+  user_view_type: { type: String, default: 'public' },
+  site_admin: { type: Boolean, default: false },
+  name: { type: String, default: '' },
+  company: { type: String, default: null },
+  blog: { type: String, default: '' },
+  location: { type: String, default: '' },
+  email: { type: String, default: null },
+  hireable: { type: Boolean, default: null },
+  bio: { type: String, default: '' },
+  twitter_username: { type: String, default: null },
+  public_repos: { type: Number, default: 0 },
+  public_gists: { type: Number, default: 0 },
+  followers: { type: Number, default: 0 },
+  following: { type: Number, default: 0 },
+  created_at: { type: Date, default: Date.now },
+  updated_at: { type: Date, default: Date.now },
+});
+
+const UserModel = mongoose.model("user", userSchema);
+export default UserModel;
