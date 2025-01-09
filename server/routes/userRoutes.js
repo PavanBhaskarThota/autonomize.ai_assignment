@@ -3,9 +3,9 @@ import UserModel from "../models/userModel.js";
 
 const userRoute = express.Router();
 
-userRoute.get("/", async (req, res) => {
+userRoute.post("/", async (req, res) => {
   try {
-    const userName = req.body.userName;
+    const userName = req.body.username;
 
     if (!userName) {
       return res.status(400).send("User name is required");
