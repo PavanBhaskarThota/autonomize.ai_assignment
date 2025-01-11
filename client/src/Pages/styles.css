@@ -1,0 +1,160 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #eff3ea;
+}
+
+.loading {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading a {
+  color: #333;
+  margin: 30px 0;
+}
+
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 30px 0;
+}
+
+.input-container input {
+  padding: 10px;
+  border-radius: 30px;
+  border: 1px solid #33333388;
+  font-size: 16px;
+  width: 350px;
+  height: 50px;
+  padding: 0 20px;
+}
+
+.input-container input:focus {
+  outline: 2px solid lightblue;
+  border: none;
+}
+
+.input-container button {
+  padding: 0 20px;
+  border-radius: 30px;
+  border: none;
+  color: white;
+  background-color: #333;
+  height: 50px;
+  width: 100px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.input-container button:hover {
+  background-color: #333333d3;
+}
+
+.repos-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.followers-button {
+  height: 40px;
+  background-color: rgb(0, 123, 255);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 0 20px;
+  cursor: pointer;
+}
+
+.followers-button:hover {
+  background-color: rgb(0, 123, 255, 0.8);
+}
+
+.follower-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0;
+}
+
+.follower-list p {
+  color: #484848;
+  font-weight: 500;
+  font-size: 20px;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+
+.follower-list p:hover {
+  text-decoration: underline;
+  transform: scale(1.1);
+}
+
+.follower-list img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+}
+
+.repos {
+  width: 90%;
+  margin: auto;
+}
+
+.repos .user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  margin: 0 auto;
+}
+
+.repos .user img {
+  width: 70px;
+  height: 70px;
+  border-radius: 40px;
+}
+
+.repo {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+.repo div h2 {
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.repo div p {
+  color: #484848;
+}
+
+.repo div img {
+  width: 70px;
+  height: 70px;
+  border-radius: 40px;
+}
+
+@media (max-width: 768px) {
+  .repos-list {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
