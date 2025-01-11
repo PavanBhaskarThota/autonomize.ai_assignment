@@ -89,7 +89,14 @@ export const UserRepos = () => {
                       />
                     </div>
                     <div>
-                      <h2>{repo.name}</h2>
+                      <h2
+                        style={{
+                          fontWeight: "500",
+                          textTransform: "capitalize",
+                        }}
+                      >
+                        {repo.name}
+                      </h2>
                       <p>{repo.description ? repo.description : "NA"}</p>
                     </div>
                   </div>
