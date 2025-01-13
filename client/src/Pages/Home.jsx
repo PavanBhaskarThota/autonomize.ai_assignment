@@ -1,14 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
 import git_image from "../Assets/github_image.png";
+import { useDispatch, useSelector } from "react-redux";
+import { deleteUser, getAllUsers } from "../Redux/slices/user.slice";
 
 export const Home = () => {
   const [username, setUserName] = useState("");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { allUsers, status, error } = useSelector((state) => state.user);
 
   const handleSubmit = () => {
     navigate(`/${username}`);
+  };
+
+  useEffect(() => {
+    dispatch(getAllUsers());
+  }, []);
+
+  const handleDelete = (id) => {
+    dispatch(deleteUser(id));
   };
 
   return (
@@ -38,6 +50,39 @@ export const Home = () => {
           Submit
         </button>
       </div>
+
+      {status === "loading" ? (
+        <div className="loading">
+          <h2>Loading...</h2>
+        </div>
+      ) : (
+        <div className="all-users">
+          {allUsers.map((user) => (
+            <div
+              className="follower-list"
+              key={user.login}
+              style={{
+                width: "100%",
+                borderTop: "0.5px solid lightgray",
+                padding: "20px",
+              }}
+            >
+              <p onClick={() => navigate(`/${user.login}`)}>{user.login}</p>
+              <div
+                style={{ display: "flex", alignItems: "center", gap: "20px" }}
+              >
+                <img src={user.avatar_url} alt="user" />
+                <button
+                  className="delete-user-btn"
+                  onClick={() => handleDelete(user._id)}
+                >
+                  Delete
+                </button>
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

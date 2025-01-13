@@ -40,4 +40,27 @@ userRoute.post("/", async (req, res) => {
   }
 });
 
+userRoute.get("/", async (req, res) => {
+  try {
+    const users = await UserModel.find({});
+    res.status(200).send(users);
+  } catch (error) {
+    res.status(500).send(error);
+  }
+});
+
+userRoute.delete("/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log(id);
+    const user = await UserModel.findByIdAndDelete({ _id: id });
+    res
+      .status(200)
+      .send({ deletedUser: user, message: "User deleted successfully" });
+  } catch (error) {
+    console.log(error);
+    res.status(500).send(error.message);
+  }
+});
+
 export default userRoute;

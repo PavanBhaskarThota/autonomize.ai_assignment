@@ -57,7 +57,7 @@ export const UserRepos = () => {
       {userDetails && (
         <div>
           <div className="user">
-            <h1>{userDetails.name}</h1>
+            <h1>{userDetails.name ? userDetails.name : userDetails.login}</h1>
             <img src={userDetails.avatar_url} alt="avatar" />
           </div>
           {followers.length === 0 && repos.message === undefined && (
@@ -101,9 +101,13 @@ export const UserRepos = () => {
                     </div>
                   </div>
                 ))
-              ) : (
+              ) : repos.message ? (
                 <div>
                   <p>{repos.message}</p>
+                </div>
+              ) : (
+                <div>
+                  <h2>No Repos Found</h2>
                 </div>
               )}
             </div>
