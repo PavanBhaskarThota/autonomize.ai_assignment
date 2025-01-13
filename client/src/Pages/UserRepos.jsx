@@ -54,6 +54,13 @@ export const UserRepos = () => {
 
   return (
     <div className="repos">
+      <button
+        className="followers-button"
+        style={{ margin: "20px 0" }}
+        onClick={() => navigate(-1)}
+      >
+        {`< Back`}
+      </button>
       {userDetails && (
         <div>
           <div className="user">
