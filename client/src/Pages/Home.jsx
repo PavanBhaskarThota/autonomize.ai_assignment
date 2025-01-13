@@ -52,7 +52,7 @@ export const Home = () => {
       </div>
 
       {status === "loading" ? (
-        <div className="loading">
+        <div className="loading" style={{ width: "100%", height: "20vh" }}>
           <h2>Loading...</h2>
         </div>
       ) : (
