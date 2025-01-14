@@ -71,7 +71,7 @@
   width: 50%;
   overflow-y: scroll;
   height: 480px;
-  cursor:;
+  cursor: all-scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
 }
