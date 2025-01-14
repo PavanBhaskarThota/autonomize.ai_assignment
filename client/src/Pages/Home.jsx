@@ -70,7 +70,7 @@ export const Home = () => {
             >
               <p onClick={() => navigate(`/${user.login}`)} display="flex">
                 {/* <span>{i + 1 + ". "}</span> */}
-                {user.name}
+                {user.name.split(" ")[0]}
               </p>
 
               <div
