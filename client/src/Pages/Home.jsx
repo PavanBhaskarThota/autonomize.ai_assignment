@@ -57,17 +57,22 @@ export const Home = () => {
         </div>
       ) : (
         <div className="all-users">
-          {allUsers.map((user) => (
+          {allUsers.map((user, i) => (
             <div
               className="follower-list"
               key={user.login}
               style={{
                 width: "100%",
                 borderTop: "0.5px solid lightgray",
-                padding: "20px",
+                padding: "10px",
+                gap: "20px",
               }}
             >
-              <p onClick={() => navigate(`/${user.login}`)}>{user.login}</p>
+              <p onClick={() => navigate(`/${user.login}`)} display="flex">
+                {/* <span>{i + 1 + ". "}</span> */}
+                {user.name}
+              </p>
+
               <div
                 style={{ display: "flex", alignItems: "center", gap: "20px" }}
               >
