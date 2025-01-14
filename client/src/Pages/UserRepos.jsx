@@ -73,6 +73,15 @@ export const UserRepos = () => {
             </button>
           )}
 
+          {followers.length > 0 && (
+            <button
+              className="followers-button"
+              onClick={() => setFollowers([])}
+            >
+              REPOS
+            </button>
+          )}
+
           {followers.length > 0 ? (
             <div style={{ padding: "20px 0" }}>
               {followers.map((follower) => (

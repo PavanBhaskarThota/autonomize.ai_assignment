@@ -32,7 +32,7 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
-  margin: 30px 0;
+  margin: 20px 0;
   padding: 0 20px;
 }
 
@@ -69,6 +69,15 @@
 
 .all-users {
   width: 50%;
+  overflow-y: scroll;
+  height: 480px;
+  cursor:;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.all-users::-webkit-scrollbar {
+  display: none;
 }
 
 .delete-user-btn {
@@ -111,7 +120,8 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  width: 80%;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .follower-list p {
@@ -129,8 +139,8 @@
 }
 
 .follower-list img {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
   border-radius: 50px;
 }
 
